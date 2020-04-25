@@ -39,9 +39,10 @@ layui.define(['table', 'jquery', 'form'], function (exports) {
                 tableBox += '<div class="tableMoreSelectBar">';
                 tableBox += '<form class="layui-form" action="" style="display:inline-block;">';
                 //条件搜索1
-                tableBox += '<input style="display:inline-block;width:190px;height:30px;vertical-align:middle;margin-right:-1px;border: 1px solid #C9C9C9;" type="text" name="'+opt.searchKey+'" placeholder="'+opt.searchPlaceholder+'" autocomplete="off" class="layui-input"><button class="layui-btn layui-btn-sm layui-btn-primary tableMoreSelect_btn_search" lay-submit lay-filter="tableMoreSelect_btn_search"><i class="layui-icon layui-icon-search"></i></button>';
+                tableBox += '<input style="display:inline-block;width:190px;height:30px;vertical-align:middle;margin-right:-1px;border: 1px solid #C9C9C9;" type="text" name="'+opt.searchKey+'" placeholder="'+opt.searchPlaceholder+'" autocomplete="off" class="layui-input">';
                 //条件搜索2
-                tableBox += '&ensp;&ensp;&ensp;<input style="display:inline-block;width:190px;height:30px;vertical-align:middle;margin-right:-1px;border: 1px solid #C9C9C9;" type="text" name="'+opt.searchKey2+'" placeholder="'+opt.searchPlaceholder2+'" autocomplete="off" class="layui-input"><button class="layui-btn layui-btn-sm layui-btn-primary tableMoreSelect_btn_search" lay-submit lay-filter="tableMoreSelect2_btn_search"><i class="layui-icon layui-icon-search"></i></button>';
+                tableBox += '&ensp;<input style="display:inline-block;width:190px;height:30px;vertical-align:middle;margin-right:-1px;border: 1px solid #C9C9C9;" type="text" name="'+opt.searchKey2+'" placeholder="'+opt.searchPlaceholder2+'" autocomplete="off" class="layui-input">';
+                tableBox +='&ensp; <button class="layui-btn layui-btn-sm layui-btn-primary tableMoreSelect_btn_search" lay-submit lay-filter="tableMoreSelect_btn_search" style="background-color: #009688"><i class="layui-icon layui-icon-search"></i></button>'
 
                 tableBox += '</form>';
                 tableBox += '<button style="float:right;" class="layui-btn layui-btn-sm tableMoreSelect_btn_select">选择<span></span></button>';
@@ -189,16 +190,6 @@ layui.define(['table', 'jquery', 'form'], function (exports) {
 
             //关键词1搜索
             form.on('submit(tableMoreSelect_btn_search)', function(data){
-                tableMoreSelect_table.reload({
-                    where: data.field,
-                    page: {
-                      curr: 1
-                    }
-                  });
-                return false;
-            });
-            //关键词2搜索
-            form.on('submit(tableMoreSelect2_btn_search)', function(data){
                 tableMoreSelect_table.reload({
                     where: data.field,
                     page: {
