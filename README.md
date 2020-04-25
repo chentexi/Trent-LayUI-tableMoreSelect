@@ -1,0 +1,4 @@
+# Trent-LayUI-tableMoreSelect
+tableMoreSelect组件是基于tableSelect组件的一个扩展可以输入多个搜索条件
+
+
